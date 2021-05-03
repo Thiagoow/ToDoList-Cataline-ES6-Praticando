@@ -1,8 +1,15 @@
 import ToDos from "./api/ToDos";
 import "./assets/css/main.css";
 
-//Funções pra testar as Apis:
+/*
+Para acessar nosso db.json (DB do server):
+http://localhost:3333/ToDos
 
+Para acessar nosso JsonServer:
+http://localhost:3333/
+*/
+
+//----------------------Funções pra testar as Apis:
 /*
 //Executa a requisição list (get) para listar todos os ToDos:
 async function listar() {
@@ -36,11 +43,11 @@ async function deletar() {
   const response = await todos.delete({});
   console.log(response);
 }
-*/
 
 //adicionar();
 //atualizar();
 //deletar();
-/*Listar tem que ser por último, pq aí ele mostra 
-com todas as alterações já feitas pelos outros métodos:*/
-//listar();
+///Listar tem que ser por último, pq aí ele mostra 
+//com todas as alterações já feitas pelos outros métodos:
+listar();
+*/

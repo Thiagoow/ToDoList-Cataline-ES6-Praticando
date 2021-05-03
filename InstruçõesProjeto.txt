@@ -1,3 +1,7 @@
+----------------------------Para Rodar Nosso Projeto:--------------------
+Dê um "npm run dev" nos terminais, dessa pasta atual com o projeto inteiro;
+E no terminal da pasta "API_JsonServer", para executar o servidor Json.
+
 ----------Usando aAxios para fazer nossas requisições do JsonServer------
 
 1-Rodando (na pasta do nosso projeto, NÃO na do JsonServer) o comando: npm i axios
