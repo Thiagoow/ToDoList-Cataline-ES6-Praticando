@@ -5,11 +5,30 @@
 2-Criamos agora, uma pasta com o nome "utils" na nossa pasta "src" do projeto, e adicionamos
 um "axios.js", com os códigos: 
 
-    import axios from "axios"
+import axios from "axios"
 
-    export default axios.create({
-    baseURL: "http://localhost:3333",
-    });
+export default axios.create({
+baseURL: "http://localhost:3333",
+});
 
 3- E criamos uma pasta "api", também na nossa pasta "src" do projeto, 
 onde haverá nossa(s) entidade(s) do projeto.
+
+4- Para importar um arquivo css no nosso projeto utilizando o webpack, precisamos fazer com que
+o webpack reconheça aquele arquivo como css. Já que padronizadamente, ele reconhece todos os arquivos
+importados como Javascript. Para isso, colamos o comando:
+
+ module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+
+Dentro do nosso webpack.config.js, abaixo da config "devtools".
+
+5- Instalando o style-loader e css-loader, como devDependencies no 
+nosso package.json do projeto (utilizando o terminal) com o comando:
+    npm i style-loader css-loader -D
