@@ -29,5 +29,13 @@
 1-Rodando (na pasta do nosso projeto, NÃO na do JsonServer) o comando: npm i axios
 
 2-Criamos agora, uma pasta com o nome "utils" na nossa pasta "src" do projeto, e adicionamos
-um "axios.js", com o código: import axios from "axios"
+um "axios.js", com os códigos: 
 
+    import axios from "axios"
+
+    export default axios.create({
+    baseURL: "http://localhost:3333",
+    });
+
+3- E criamos uma pasta "api", também na nossa pasta "src" do projeto, 
+onde haverá nossa(s) entidade(s) do projeto.
