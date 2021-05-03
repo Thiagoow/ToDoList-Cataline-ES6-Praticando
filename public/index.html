@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, 
-    initial-scale=1.0"
-    />
-    <title>ECMAScript6+</title>
-    <style>
-      body {
-        background-color: #332d6b;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDos List</title>
   </head>
-
   <body>
+    <div id="app">
+      <form>
+        <input type="text" placeholder="Todo" />
+
+        <label class="checkbox-input">
+          Não concluída
+          <input type="checkbox" checked="true" />
+          <span class="checkmark"></span>
+        </label>
+
+        <button type="submit">Adicionar</button>
+      </form>
+
+      <ul class="todos">
+        <span class="todos-title">Todos</span>
+
+        <li class="todo">
+          <label class="checkbox-input">
+            <input type="checkbox" checked="true" />
+            <span class="checkmark"></span>
+          </label>
+          <span class="todo-text">Lavar Roupa</span>
+          <a class="todo-delete"></a>
+        </li>
+        <li class="todo">
+          <label class="checkbox-input">
+            <input type="checkbox" checked="true" />
+            <span class="checkmark"></span>
+          </label>
+          <span class="todo-text">Beber água</span>
+          <a class="todo-delete"></a>
+        </li>
+      </ul>
+    </div>
     <script src="./bundle.js"></script>
   </body>
 </html>
