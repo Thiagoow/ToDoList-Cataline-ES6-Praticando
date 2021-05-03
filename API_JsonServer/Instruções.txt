@@ -11,12 +11,14 @@
 
 5-Criamos o arquivo db.json com nossas infos de database/banco de dados(db).
 
-----------------------------Para rodar nosso servidor:-------------------------
+----------------------------Para rodar nosso servidor-------------------------
 -Fechamos o projeto no Vs Code e abrimos o PowerShell/CMD/Terminal do nosso OS;
 -Selecionamos a pasta onde criamos nosso servidor simulado, exemplo:
 	cd desktop/PastaComServer
 -Rodamos o comando: npm run dev.
----------------------------------------OU:----------------------------------
--Rodas o: "npm run dev", no terminal do VSCode, com o projeto aberto lá;
+---------------------------------------OU:------------------------------------
+-Abrimos a pasta do projeto com o terminal no VSCode, e damos: "npm run dev";
+---------------------------------------OU:------------------------------------
+-Rodamos o: "npm run dev", no terminal do VSCode, com só a nossa pasta de server aberto;
 
 -E pronto, nosso server json está criado e funcionando :)
