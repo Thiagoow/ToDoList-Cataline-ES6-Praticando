@@ -1,0 +1,24 @@
+{
+  "ToDos": [
+    {
+      "id": 1,
+      "text": "Lavar as roupas",
+      "done": true
+    },
+    {
+      "id": 1,
+      "text": "Varrer a casa",
+      "done": false
+    },
+    {
+      "id": 1,
+      "text": "Lavar o cachorro 🐶",
+      "done": false
+    },
+    {
+      "id": 1,
+      "text": "Malhar na academia",
+      "done": true
+    }
+  ]
+}
