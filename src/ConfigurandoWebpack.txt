@@ -1,0 +1,36 @@
+1---------- Excluímos as dev dependencies das aulas anteriores no package.json,
+e instalamos o webpack junto com o babel, com esse comando:
+
+    npm install webpack webpack-cli webpack-dev-server @babel/polyfill -D
+
+Destrinchando o comando:
+webpack: Pacote com funções principais do webpack;
+webpack-cli: Utilizamos a linha de comando do webpack;
+webpack-dev-server: Permite levantar um server de dev;
+@babel/polyfill: Permite suporte de browser, adapta os códigos ES>=6 pra ES<=5, em browsers desatualizados;
+--save-dev OU -D: Salva o comando como dependências de dev.
+
+2-------------- O script no index.html deve ser:
+    <script src="./bundle.js"></script>
+
+3-----------------Sendo necessário também, criar um arquivo na raiz do projeto, com o nome:
+    webpack.config.js
+
+4------------------Contendo dentro dele os seguintes códigos (entre as chaves):
+{
+const path = require("path");
+
+module.exports = {
+  entry: ["@babel/polyfill", path.resolve(__dirname, "./src/main.js")],
+  output: {
+    path: path.resolve(__dirname, "./public"),
+    filename: "bundle.js",
+    sourceMapFilename: "bundle.js.map",
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, "./public"),
+    port: 3000,
+  },
+  devtool: "source-map",
+};
+}
