@@ -40,6 +40,14 @@ const app = createApp({
       const index = this.ToDos.findIndex(({ id }) => id === data.id);
       this.ToDos[index] = data;
     },
+
+    async deleteToDo(id) {
+      await apiToDos.delete({ id });
+      //Deleta o ToDo da API:
+      const index = this.ToDos.findIndex((ToDo) => ToDo.id === id);
+      //Deleta o ToDo da lista HTML:
+      this.ToDos.splice(index, 1);
+    },
   },
 });
 
