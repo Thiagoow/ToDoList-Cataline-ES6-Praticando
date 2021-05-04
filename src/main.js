@@ -16,37 +16,67 @@ const app = createApp({
     };
   },
   async created() {
-    this.fetchToDos();
+    this.listToDos();
   },
   methods: {
-    async fetchToDos() {
-      this.ToDos = await apiToDos.list();
+    async listToDos() {
+      try {
+        this.ToDos = await apiToDos.list();
+      } catch (error) {
+        alert(
+          "⚠ERRO❗ Não foi possível carregar sua lista de tarefas! 🥺\nTalvez o server esteja inativo 🤔"
+        );
+        console.log(error);
+      }
     },
     async createToDo() {
-      const data = await apiToDos.store(this.form);
-      this.ToDos.push(data);
+      try {
+        const data = await apiToDos.store(this.form);
+        this.ToDos.push(data);
 
-      //Limpa o form:
-      this.form.text = "";
-      this.form.done = false;
+        //Limpa o form:
+        this.form.text = "";
+        this.form.done = false;
+      } catch (error) {
+        alert(
+          "⚠ ERRO❗ 😵 Não foi possível criar um novo ToDo! 🥺\nTalvez o server esteja inativo 🤔"
+        );
+        console.log(error);
+      }
     },
 
     async changeToDoStatus(ToDo) {
-      const data = await apiToDos.update({
-        ...ToDo,
-        done: !ToDo.done,
-      });
+      try {
+        const data = await apiToDos.update({
+          ...ToDo,
+          done: !ToDo.done,
+        });
 
-      const index = this.ToDos.findIndex(({ id }) => id === data.id);
-      this.ToDos[index] = data;
+        //Atualiza na API:
+        const index = this.ToDos.findIndex(({ id }) => id === data.id);
+        //Atualiza na lista do HTML:
+        this.ToDos[index] = data;
+      } catch (error) {
+        alert(
+          "⚠ ERRO❗ 😵 Não foi possível atualizar seu ToDo! 🥺\nTalvez o server esteja inativo 🤔"
+        );
+        console.log(error);
+      }
     },
 
     async deleteToDo(id) {
-      await apiToDos.delete({ id });
-      //Deleta o ToDo da API:
-      const index = this.ToDos.findIndex((ToDo) => ToDo.id === id);
-      //Deleta o ToDo da lista HTML:
-      this.ToDos.splice(index, 1);
+      try {
+        await apiToDos.delete({ id });
+        //Deleta o ToDo da API:
+        const index = this.ToDos.findIndex((ToDo) => ToDo.id === id);
+        //Deleta o ToDo da lista HTML:
+        this.ToDos.splice(index, 1);
+      } catch (error) {
+        alert(
+          "⚠ ERRO❗ 😵 Não foi possível deletar seu ToDo!🥺\nTalvez o server esteja inativo 🤔"
+        );
+        console.log(error);
+      }
     },
   },
 });
