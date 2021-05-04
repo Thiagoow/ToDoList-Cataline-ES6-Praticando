@@ -1,5 +1,31 @@
+import { createApp } from "vue";
 import ToDos from "./api/ToDos";
 import "./assets/css/main.css";
+
+const apiToDos = new ToDos();
+
+const app = createApp({
+  data() {
+    return {
+      ToDos: "",
+    };
+  },
+  async created() {
+    this.fetchToDos();
+  },
+  methods: {
+    async fetchToDos() {
+      this.ToDos = await apiToDos.list();
+    },
+  },
+});
+
+/*
+Onde será montada nossa aplicação com Vue.js,
+onde o "mount" funciona como um querySelector,
+definindo em qual tag o a] será montado:
+*/
+app.mount("#app");
 
 /*
 Para acessar nosso db.json (DB do server):

@@ -68,17 +68,17 @@ form button[type="submit"]:after {
   transform: translateY(-50%);
 }
 
-.todos {
+.ToDos {
   padding: 0;
   display: grid;
   grid-gap: 0.5rem;
 }
 
-.todos-title {
+.ToDos-title {
   color: #ececf6;
 }
 
-.todo {
+.ToDo {
   color: #ececf6;
   background-color: #2b3a4e;
   padding: 1rem;
@@ -89,13 +89,13 @@ form button[type="submit"]:after {
   grid-gap: 0.3rem;
 }
 
-.todo .todo-text {
+.ToDo .ToDo-text {
   width: max-content;
   color: #8b98a8;
   align-self: center;
 }
 
-.todo .todo-delete {
+.ToDo .ToDo-delete {
   background-color: #d53e6b;
   width: 24px;
   height: 24px;
@@ -105,8 +105,8 @@ form button[type="submit"]:after {
   position: relative;
 }
 
-.todo .todo-delete:before,
-.todo .todo-delete:after {
+.ToDo .ToDo-delete:before,
+.ToDo .ToDo-delete:after {
   content: "";
   width: 3px;
   height: 13px;
@@ -116,19 +116,19 @@ form button[type="submit"]:after {
   left: 50%;
 }
 
-.todo .todo-delete:before {
+.ToDo .ToDo-delete:before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.todo .todo-delete:after {
+.ToDo .ToDo-delete:after {
   transform: translate(-50%, -50%) rotate(130deg);
 }
 
-.todo .todo-delete:hover {
+.ToDo .ToDo-delete:hover {
   background-color: #984848;
 }
 
-.todo.done .todo-text {
+.ToDo.done .ToDo-text {
   text-decoration: line-through;
 }
 

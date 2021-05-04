@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDos List</title>
+    <title>ToDo's List</title>
   </head>
   <body>
     <div id="app">
       <form>
-        <input type="text" placeholder="Todo" />
+        <input type="text" placeholder="ToDo:" />
 
         <label class="checkbox-input">
           Não concluída
@@ -19,27 +19,22 @@
         <button type="submit">Adicionar</button>
       </form>
 
-      <ul class="todos">
-        <span class="todos-title">Todos</span>
+      <ul class="ToDos">
+        <span class="ToDos-title">ToDos</span>
 
-        <li class="todo">
+        <li :class="['ToDo', { done: ToDo.done}]" v-for="ToDo in ToDos">
           <label class="checkbox-input">
-            <input type="checkbox" checked="true" />
+            <input type="checkbox" :checked="ToDo.done" />
             <span class="checkmark"></span>
           </label>
-          <span class="todo-text">Lavar Roupa</span>
-          <a class="todo-delete"></a>
-        </li>
-        <li class="todo">
-          <label class="checkbox-input">
-            <input type="checkbox" checked="true" />
-            <span class="checkmark"></span>
-          </label>
-          <span class="todo-text">Beber água</span>
-          <a class="todo-delete"></a>
+
+          <span class="ToDo-text">{{ToDo.text}}</span>
+
+          <a class="ToDo-delete"></a>
         </li>
       </ul>
     </div>
+
     <script src="./bundle.js"></script>
   </body>
 </html>
