@@ -6,9 +6,9 @@
       "done": true
     },
     {
-      "id": 2,
       "text": "Varrer a casa",
-      "done": false
+      "done": true,
+      "id": 2
     },
     {
       "text": "Dar banho no cachorro",
@@ -17,8 +17,38 @@
     },
     {
       "text": "Beber Água",
-      "done": true,
+      "done": false,
       "id": 4
+    },
+    {
+      "text": "Uhuu :D",
+      "done": false,
+      "id": 5
+    },
+    {
+      "text": "Uhuu :D",
+      "done": false,
+      "id": 6
+    },
+    {
+      "text": "Yey :)",
+      "done": false,
+      "id": 7
+    },
+    {
+      "text": "Yey :)",
+      "done": false,
+      "id": 8
+    },
+    {
+      "text": "Yey :)",
+      "done": false,
+      "id": 9
+    },
+    {
+      "text": "Aaa",
+      "done": false,
+      "id": 10
     }
   ]
 }

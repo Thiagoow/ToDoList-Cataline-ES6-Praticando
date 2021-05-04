@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo's List</title>
+    <title>ToDo List</title>
   </head>
   <body>
     <div id="app">
-      <form>
-        <input type="text" placeholder="ToDo:" />
+      <!--Quando o formulário for enviado, aciona a função de criar um novo ToDo:-->
+      <form @submit.prevent="createToDo()">
+        <!--O v-model aqui, salva o input como o campo texto do form-->
+        <input type="text" placeholder="✏ ToDo:" v-model="form.text" />
 
         <label class="checkbox-input">
-          Não concluída
-          <input type="checkbox" checked="true" />
+          {{ form.done ? 'Concluído ✅' : 'Não concluído ❌' }}
+          <!--O v-model aqui, salva a checkbox como o campo done do form-->
+          <input type="checkbox" v-model="form.done" :checked="form.done" />
           <span class="checkmark"></span>
         </label>
 
@@ -20,10 +23,12 @@
       </form>
 
       <ul class="ToDos">
-        <span class="ToDos-title">ToDos</span>
+        <span class="ToDos-title">📝 ToDos</span>
 
         <li :class="['ToDo', { done: ToDo.done}]" v-for="ToDo in ToDos">
-          <label class="checkbox-input">
+          <!--Esse atualiza o status do campo done do ToDo, 
+          tirando o risquinho do texto quando desmarcado-->
+          <label class="checkbox-input" @click="changeToDoStatus(ToDo)">
             <input type="checkbox" :checked="ToDo.done" />
             <span class="checkmark"></span>
           </label>

@@ -7,7 +7,12 @@ const apiToDos = new ToDos();
 const app = createApp({
   data() {
     return {
-      ToDos: "",
+      ToDos: [],
+      //Form do html :)
+      form: {
+        text: "",
+        done: false,
+      },
     };
   },
   async created() {
@@ -16,6 +21,24 @@ const app = createApp({
   methods: {
     async fetchToDos() {
       this.ToDos = await apiToDos.list();
+    },
+    async createToDo() {
+      const data = await apiToDos.store(this.form);
+      this.ToDos.push(data);
+
+      //Limpa o form:
+      this.form.text = "";
+      this.form.done = false;
+    },
+
+    async changeToDoStatus(ToDo) {
+      const data = await apiToDos.update({
+        ...ToDo,
+        done: !ToDo.done,
+      });
+
+      const index = this.ToDos.findIndex(({ id }) => id === data.id);
+      this.ToDos[index] = data;
     },
   },
 });
