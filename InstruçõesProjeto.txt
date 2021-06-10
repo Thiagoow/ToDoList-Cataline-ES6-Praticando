@@ -1,4 +1,4 @@
-----------------------------Para Rodar Nosso Projeto:--------------------
+----------------------------Para Rodar Esse Projeto:--------------------
 Dê um "npm run dev" nos terminais, dessa pasta atual com o projeto inteiro;
 E no terminal da pasta "API_JsonServer", para executar o servidor Json.
 
