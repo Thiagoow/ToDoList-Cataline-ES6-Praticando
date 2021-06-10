@@ -10,7 +10,7 @@ tendo como base, as aulas de ECMAScript6+, no Basecamp gratuito da <a href="http
 
 ## ⚠ Esse projeto possui um servidor local separado do aplicativo❗❗❗
 
-### Sendo assim, siga os passos abaixo na pasta raiz do projeto, e na pasta "API_JsonServer", para que o projeto funcione corretamente.
+### Sendo assim, siga os passos abaixo na pasta raiz do projeto, e na pasta "API_JsonServer", para que o projeto funcione corretamente:
 
 ##### 1º - Instalar o projeto localmente, com a pasta "node_modules":
 
