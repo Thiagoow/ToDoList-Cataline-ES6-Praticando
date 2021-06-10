@@ -8,7 +8,9 @@
 <p>Esse projeto foi feito por: <strong>Thiago Silva Lopes</strong>, em 05/2021,</br>
 tendo como base, as aulas de ECMAScript6+, no Basecamp gratuito da <a href="https://www.cataline.io/basecamp">Cataline</a>
 
-## Esse projeto possui um servidor local separado do aplicativo. Sendo assim, siga os passos abaixo na pasta raiz do projeto, e na pasta "API_JsonServer", para que o projeto funcione corretamente.
+## Esse projeto possui um servidor local separado do aplicativo.
+
+### Sendo assim, siga os passos abaixo na pasta raiz do projeto, e na pasta "API_JsonServer", para que o projeto funcione corretamente.
 
 ##### 1º - Instalar o projeto localmente, com a pasta "node_modules":
 
