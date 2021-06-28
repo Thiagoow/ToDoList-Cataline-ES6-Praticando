@@ -11,8 +11,8 @@ const app = createApp({
       //Form do html :)
       form: {
         text: "",
-        done: false,
-      },
+        done: false
+      }
     };
   },
   async created() {
@@ -24,7 +24,7 @@ const app = createApp({
         this.ToDos = await apiToDos.list();
       } catch (error) {
         alert(
-          "⚠ERRO❗ Não foi possível carregar sua lista de tarefas! 🥺\nTalvez o server esteja inativo 🤔"
+          "⚠ERRO❗ Não foi possível carregar sua lista de tarefas! 🥺\nTalvez a API esteja inativa 🤔"
         );
         console.log(error);
       }
@@ -39,7 +39,7 @@ const app = createApp({
         this.form.done = false;
       } catch (error) {
         alert(
-          "⚠ ERRO❗ 😵 Não foi possível criar um novo ToDo! 🥺\nTalvez o server esteja inativo 🤔"
+          "⚠ ERRO❗ 😵 Não foi possível criar um novo ToDo! 🥺\nTalvez a API esteja inativa 🤔"
         );
         console.log(error);
       }
@@ -49,7 +49,7 @@ const app = createApp({
       try {
         const data = await apiToDos.update({
           ...ToDo,
-          done: !ToDo.done,
+          done: !ToDo.done
         });
 
         //Atualiza na API:
@@ -58,7 +58,7 @@ const app = createApp({
         this.ToDos[index] = data;
       } catch (error) {
         alert(
-          "⚠ ERRO❗ 😵 Não foi possível atualizar seu ToDo! 🥺\nTalvez o server esteja inativo 🤔"
+          "⚠ ERRO❗ 😵 Não foi possível atualizar seu ToDo! 🥺\nTalvez a API esteja inativa 🤔"
         );
         console.log(error);
       }
@@ -73,12 +73,12 @@ const app = createApp({
         this.ToDos.splice(index, 1);
       } catch (error) {
         alert(
-          "⚠ ERRO❗ 😵 Não foi possível deletar seu ToDo!🥺\nTalvez o server esteja inativo 🤔"
+          "⚠ ERRO❗ 😵 Não foi possível deletar seu ToDo!🥺\nTalvez a API esteja inativa 🤔"
         );
         console.log(error);
       }
-    },
-  },
+    }
+  }
 });
 
 /*

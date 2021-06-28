@@ -5,6 +5,9 @@ nos dois repositórios.
 Após a execução, acesse esse projeto na url -> http://localhost:3333/
 E os dados da API na url -> http://localhost:3000/ToDos
 
+----------------------Como eu fiz o deploy dele no Netlify--------------
+Mudei as configs de deploy, da pasta "dist/" pra pasta "public/"
+
 
 ----------Usando aAxios para fazer nossas requisições do JsonServer------
 
