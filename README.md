@@ -10,10 +10,10 @@ tendo como base, as aulas de ECMAScript6+, no Basecamp gratuito da <a href="http
 
 ## Demo:
 
-### ⚠ Esse projeto possui um API separada do aplicativo❗❗❗ Sendo assim, caso queira rodar esse app localmente, clone também a API no repositório:
+### ⚠ Esse projeto possui um API separada do aplicativo❗❗❗ Sendo assim, caso queira rodar esse app localmente, clone a API no repositório:
 
 https://github.com/Thiagoow/API-JsonServer-ToDoList-ThiagoSilvaLopes </br>
-<small>( E mude a "baseURL:" em "src/utils/", para: "http://localhost:3000" ) </small>
+<small align="center">( E mude a "baseURL:" em "src/utils/", para: "http://localhost:3000" ) </small>
 
 ##### 1º - Instalar o projeto localmente, com a pasta "node_modules":
 
