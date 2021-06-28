@@ -1,24 +1,31 @@
 ----------------------------Para Rodar Esse Projeto:--------------------
-Dê um "npm run dev" nos terminais, dessa pasta atual com o projeto inteiro;
-E no terminal da pasta "API_JsonServer", para executar o servidor Json.
+Clone também o repositório da API criada com JsonServer. E dê "npm run dev"
+nos dois repositórios. 
+
+Após a execução, acesse esse projeto na url -> http://localhost:3333/
+E os dados da API na url -> http://localhost:3000/ToDos
+
 
 ----------Usando aAxios para fazer nossas requisições do JsonServer------
 
-1-Rodando (na pasta do nosso projeto, NÃO na do JsonServer) o comando: npm i axios
+1º Rodamos (no projeto, NÃO na API com JsonServer) o comando: 
+  npm i axios
 
-2-Criamos agora, uma pasta com o nome "utils" na nossa pasta "src" do projeto, e adicionamos
-um "axios.js", com os códigos: 
+2º Criamos agora, uma pasta com o nome "utils" na nossa pasta "src" do projeto, e adicionamos
+um "axios.js", com os códigos (DENTRO das aspas): 
 
+"
 import axios from "axios"
 
 export default axios.create({
 baseURL: "http://localhost:3333",
 });
+"
 
-3- E criamos uma pasta "api", também na nossa pasta "src" do projeto, 
+3º E criamos uma pasta "api", também na nossa pasta "src" do projeto, 
 onde haverá nossa(s) entidade(s) do projeto.
 
-4- Para importar um arquivo css no nosso projeto utilizando o webpack, precisamos fazer com que
+4º Para importar um arquivo css no nosso projeto utilizando o webpack, precisamos fazer com que
 o webpack reconheça aquele arquivo como css. Já que padronizadamente, ele reconhece todos os arquivos
 importados como Javascript. Para isso, colamos o comando:
 
@@ -33,6 +40,6 @@ importados como Javascript. Para isso, colamos o comando:
 
 Dentro do nosso webpack.config.js, abaixo da config "devtools".
 
-5- Instalando o style-loader e css-loader, como devDependencies no 
+5º Instalando o style-loader e css-loader, como devDependencies no 
 nosso package.json do projeto (utilizando o terminal) com o comando:
     npm i style-loader css-loader -D
