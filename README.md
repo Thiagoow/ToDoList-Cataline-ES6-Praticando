@@ -8,9 +8,9 @@
 <p>Esse projeto foi feito por: <strong>Thiago Silva Lopes</strong>, em 05/2021,</br>
 tendo como base, as aulas de ECMAScript6+, no Basecamp gratuito da <a href="https://www.cataline.io/basecamp">Cataline</a>
 
-### ⚠ Esse projeto possui um API separada do aplicativo❗❗❗
+## Demo:
 
-### Sendo assim, caso queira rodar esse app localmente, clone também a API no repositório:
+### ⚠ Esse projeto possui um API separada do aplicativo❗❗❗ Sendo assim, caso queira rodar esse app localmente, clone também a API no repositório:
 
 https://github.com/Thiagoow/API-JsonServer-ToDoList-ThiagoSilvaLopes </br>
 <small>( E mude a "baseURL:" em "src/utils/", para: "http://localhost:3000" ) </small>
