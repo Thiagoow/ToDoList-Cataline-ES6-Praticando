@@ -8,7 +8,7 @@
 <p>Esse projeto foi feito por: <strong>Thiago Silva Lopes</strong>, em 05/2021,</br>
 tendo como base, as aulas de ECMAScript6+, no Basecamp gratuito da <a href="https://www.cataline.io/basecamp">Cataline</a>
 
-## Demo: https://todolist-cataline-thiagosl.netlify.app/
+## Demo: https://todo-list-cataline.vercel.app
 
 ### ⚠ Esse projeto possui um API separada do aplicativo❗❗❗ Sendo assim, caso queira rodar esse app localmente, clone a API no repositório:
 
