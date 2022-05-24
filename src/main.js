@@ -1,6 +1,6 @@
-import { createApp } from "vue";
-import ToDos from "./api/ToDos";
-import "./assets/css/main.css";
+import { createApp } from 'vue';
+import ToDos from './api/ToDos';
+import './assets/css/main.css';
 
 const apiToDos = new ToDos();
 
@@ -10,7 +10,7 @@ const app = createApp({
       ToDos: [],
       //Form do html :)
       form: {
-        text: "",
+        text: '',
         done: false
       }
     };
@@ -24,7 +24,7 @@ const app = createApp({
         this.ToDos = await apiToDos.list();
       } catch (error) {
         alert(
-          "⚠ERRO❗ Não foi possível carregar sua lista de tarefas! 🥺\nTalvez a API esteja inativa 🤔"
+          '⚠ERRO❗ Não foi possível carregar sua lista de tarefas! 🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
@@ -35,11 +35,11 @@ const app = createApp({
         this.ToDos.push(data);
 
         //Limpa o form:
-        this.form.text = "";
+        this.form.text = '';
         this.form.done = false;
       } catch (error) {
         alert(
-          "⚠ ERRO❗ 😵 Não foi possível criar um novo ToDo! 🥺\nTalvez a API esteja inativa 🤔"
+          '⚠ ERRO❗ 😵 Não foi possível criar um novo ToDo! 🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
@@ -58,7 +58,7 @@ const app = createApp({
         this.ToDos[index] = data;
       } catch (error) {
         alert(
-          "⚠ ERRO❗ 😵 Não foi possível atualizar seu ToDo! 🥺\nTalvez a API esteja inativa 🤔"
+          '⚠ ERRO❗ 😵 Não foi possível atualizar seu ToDo! 🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
@@ -73,7 +73,7 @@ const app = createApp({
         this.ToDos.splice(index, 1);
       } catch (error) {
         alert(
-          "⚠ ERRO❗ 😵 Não foi possível deletar seu ToDo!🥺\nTalvez a API esteja inativa 🤔"
+          '⚠ ERRO❗ 😵 Não foi possível deletar seu ToDo!🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
@@ -84,9 +84,8 @@ const app = createApp({
 /*
 Onde será montada nossa aplicação com Vue.js,
 onde o "mount" funciona como um querySelector,
-definindo em qual tag o a] será montado:
-*/
-app.mount("#app");
+definindo em qual tag o app será montado: */
+app.mount('#app');
 
 /*
 Para acessar nosso db.json (DB do server):
