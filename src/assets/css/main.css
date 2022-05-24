@@ -52,8 +52,20 @@ form button[type='submit'],
   transition: all 0.2s linear;
 }
 
-form button[type='submit']:hover {
+form button[type='submit']:hover,
+.apiBtn:hover {
   background-color: #1b5cdc;
+}
+
+.btns {
+  display: flex;
+  text-decoration: none;
+}
+.apiBtn {
+  margin: -1rem 1rem 0 0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #ececf6;
 }
 
 form .checkbox-input {

@@ -10,6 +10,18 @@
 
   <body>
     <div id="app">
+      <span class="ToDos-title">👨🏻‍💻 Ver os dados</span>
+      <div class="btns">
+        <a
+          href="https://api-jsonserver-todolist.herokuapp.com/ToDos"
+          class="apiBtn"
+        >
+          Remote API
+        </a>
+
+        <a href="http://localhost:3000/ToDos" class="apiBtn"> Local API </a>
+      </div>
+
       <!--When form send, activate 'createToDo' method. 
       With preventDefault for don't update the page -->
       <form @submit.prevent="createToDo()">
