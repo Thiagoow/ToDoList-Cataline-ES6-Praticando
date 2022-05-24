@@ -12,14 +12,14 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/polyfill": "^7.12.1",
-    "css-loader": "^5.2.4",
-    "style-loader": "^2.0.0",
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.36.1",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.27.2",
     "vue": "^3.0.11"
   }
 }

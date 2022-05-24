@@ -1,29 +1,29 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: ["@babel/polyfill", path.resolve(__dirname, "./src/main.js")],
+  entry: ['@babel/polyfill', path.resolve(__dirname, './src/main.js')],
   output: {
-    path: path.resolve(__dirname, "./public"),
-    filename: "bundle.js",
-    sourceMapFilename: "bundle.js.map"
+    path: path.resolve(__dirname, './public'),
+    filename: 'bundle.js',
+    sourceMapFilename: 'bundle.js.map'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "./public"),
+    static: path.resolve(__dirname, './public'),
     port: 3333
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   resolve: {
     alias: {
-      vue: "vue/dist/vue.esm-bundler.js"
+      vue: 'vue/dist/vue.esm-bundler.js'
     }
   },
   plugins: [
