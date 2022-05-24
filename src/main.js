@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import ToDos from './api/ToDos';
-import './assets/css/main.css';
+import './assets/main.css';
 
 const apiToDos = new ToDos();
 
