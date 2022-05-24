@@ -18,13 +18,13 @@ https://github.com/Thiagoow/API-JsonServer-ToDoList-ThiagoSilvaLopes </br>
 ##### 1º - Instalar o projeto localmente, com a pasta "node_modules":
 
 ```
-npm install
+yarn install
 ```
 
 ##### 2º - Compilar/executar o projeto localmente:
 
 ```
-npm run dev
+yarn dev
 ```
 
 <small>© Thiago Silva Lopes </small>
