@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../src/assets/htmlLogo.png" />
+    <link rel="icon" href="../src/assets/favicon.png" />
     <link rel="stylesheet" href="../src/assets/css/main.css" />
     <title>ToDo List</title>
   </head>
 
   <body>
     <div id="app">
-      <!--Quando o formulário for enviado, aciona a função de criar um novo ToDo:-->
+      <!--When form send, activate 'createToDo' method. 
+      With preventDefault for don't update the page -->
       <form @submit.prevent="createToDo()">
-        <!--O v-model aqui, salva o input como o campo texto do form-->
-        <input type="text" placeholder="✏ ToDo:" v-model="form.text" />
+        <!--v-model -> Makes this input be the string for 'form' const-->
+        <input
+          type="text"
+          placeholder="O que você precisa fazer?"
+          v-model="form.text"
+        />
 
         <label class="checkbox-input">
-          {{ form.done ? 'Concluído ✅' : 'Não concluído ❌' }}
-          <!--O v-model aqui, salva a checkbox como o campo done do form-->
+          {{ form.done ? 'Concluído ✅' : 'A fazer ❌' }}
+          <!--v-model -> Makes this input be the boolean for 'form' const-->
           <input type="checkbox" v-model="form.done" :checked="form.done" />
           <span class="checkmark"></span>
         </label>
@@ -26,13 +31,15 @@
       </form>
 
       <ul class="ToDos">
-        <span class="ToDos-title">📝 ToDos</span>
+        <span class="ToDos-title">📝 To Do's</span>
 
+        <!-- Create a list with every single item present in the items array with the 
+          dynamicClass(:class)=done. To style the different ToDo states (true || false) -->
         <li :class="['ToDo', { done: ToDo.done}]" v-for="ToDo in ToDos">
-          <!--Esse atualiza o status do campo done do ToDo, 
-          tirando o risquinho do texto quando desmarcado-->
+          <!-- When checkbox clicked, invert the done state: -->
           <label class="checkbox-input" @click="changeToDoStatus(ToDo)">
             <input type="checkbox" :checked="ToDo.done" />
+            <!-- ☝🏽 :checked -> Depends of the item state -->
             <span class="checkmark"></span>
           </label>
 
@@ -43,6 +50,8 @@
       </ul>
     </div>
 
+    <!-- Use the data defined on the bundle
+    created by webpack whenever we run the project -->
     <script src="./bundle.js"></script>
   </body>
 </html>

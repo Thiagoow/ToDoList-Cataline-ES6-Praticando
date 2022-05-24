@@ -7,39 +7,45 @@ const apiToDos = new ToDos();
 const app = createApp({
   data() {
     return {
+      //Array that contains all the items:
       ToDos: [],
-      //Form do html :)
       form: {
+        //Form/item data:
         text: '',
         done: false
       }
     };
   },
   async created() {
+    /* Activate GET request whenever project 
+    is mounted (using lifeCycleHook: created) */
     this.listToDos();
   },
+
   methods: {
     async listToDos() {
       try {
+        //Insert API data on the local 'ToDos' array:
         this.ToDos = await apiToDos.list();
       } catch (error) {
         alert(
-          '⚠ERRO❗ Não foi possível carregar sua lista de tarefas! 🥺\nTalvez a API esteja inativa 🤔'
+          '⚠ERRO❗ Não foi possível CARREGAR sua lista de tarefas! 🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
     },
+
     async createToDo() {
       try {
         const data = await apiToDos.store(this.form);
         this.ToDos.push(data);
 
-        //Limpa o form:
+        //Clear form data:
         this.form.text = '';
         this.form.done = false;
       } catch (error) {
         alert(
-          '⚠ ERRO❗ 😵 Não foi possível criar um novo ToDo! 🥺\nTalvez a API esteja inativa 🤔'
+          '⚠ ERRO❗ 😵 Não foi possível CRIAR um novo ToDo! 🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
@@ -48,17 +54,18 @@ const app = createApp({
     async changeToDoStatus(ToDo) {
       try {
         const data = await apiToDos.update({
+          //Update only the done status (inverting it):
           ...ToDo,
           done: !ToDo.done
         });
 
-        //Atualiza na API:
+        //Update by id on API:
         const index = this.ToDos.findIndex(({ id }) => id === data.id);
-        //Atualiza na lista do HTML:
+        //Update by id on local array:
         this.ToDos[index] = data;
       } catch (error) {
         alert(
-          '⚠ ERRO❗ 😵 Não foi possível atualizar seu ToDo! 🥺\nTalvez a API esteja inativa 🤔'
+          '⚠ ERRO❗ 😵 Não foi possível ATUALIZAR seu ToDo! 🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
@@ -67,13 +74,13 @@ const app = createApp({
     async deleteToDo(id) {
       try {
         await apiToDos.delete({ id });
-        //Deleta o ToDo da API:
+        //Delete from API:
         const index = this.ToDos.findIndex((ToDo) => ToDo.id === id);
-        //Deleta o ToDo da lista HTML:
+        //Delete from local array:
         this.ToDos.splice(index, 1);
       } catch (error) {
         alert(
-          '⚠ ERRO❗ 😵 Não foi possível deletar seu ToDo!🥺\nTalvez a API esteja inativa 🤔'
+          '⚠ ERRO❗ 😵 Não foi possível DELETAR seu ToDo!🥺\nTalvez a API esteja inativa 🤔'
         );
         console.log(error);
       }
@@ -82,22 +89,13 @@ const app = createApp({
 });
 
 /*
-Onde será montada nossa aplicação com Vue.js,
-onde o "mount" funciona como um querySelector,
-definindo em qual tag o app será montado: */
+Onde será montada nossa aplicação com Vue.js.
+O método "mount" funciona como um querySelector,
+definindo em qual tag o app deve ser montado: */
 app.mount('#app');
 
-/*
-Para acessar nosso db.json (DB do server):
-http://localhost:3333/ToDos
-
-Para acessar nosso JsonServer:
-http://localhost:3333/
-*/
-
-//----------------------Funções pra testar as Apis:
-/*
-//Executa a requisição list (get) para listar todos os ToDos:
+/*-----Only Local Requests (no API handler):
+//GET request:
 async function listar() {
   const todos = new ToDos();
 
@@ -105,6 +103,7 @@ async function listar() {
   console.log(response);
 }
 
+//POST request:
 async function adicionar() {
   const todos = new ToDos();
 
@@ -112,6 +111,7 @@ async function adicionar() {
   console.log(response);
 }
 
+//PUT request:
 async function atualizar() {
   const todos = new ToDos();
 
@@ -123,6 +123,7 @@ async function atualizar() {
   console.log(response);
 }
 
+//DELETE request:
 async function deletar() {
   const todos = new ToDos();
 
@@ -133,7 +134,8 @@ async function deletar() {
 //adicionar();
 //atualizar();
 //deletar();
-///Listar tem que ser por último, pq aí ele mostra 
-//com todas as alterações já feitas pelos outros métodos:
+
+//GET request tem que ser a primeira e última a ser executada,
+//para exibir com todas as alterações já feitas pelos outros methods.
 listar();
 */
