@@ -4,24 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../src/assets/favicon.png" />
-    <link rel="stylesheet" href="../src/assets/css/main.css" />
+    <link rel="stylesheet" href="../src/assets/main.css" />
     <title>ToDo List</title>
   </head>
 
   <body>
     <div id="app">
-      <span class="ToDos-title">👨🏻‍💻 Ver os dados</span>
-      <div class="btns">
-        <a
-          href="https://api-jsonserver-todolist.herokuapp.com/ToDos"
-          class="apiBtn"
-        >
-          Remote API
-        </a>
-
-        <a href="http://localhost:3000/ToDos" class="apiBtn"> Local API </a>
-      </div>
-
       <!--When form send, activate 'createToDo' method. 
       With preventDefault for don't update the page -->
       <form @submit.prevent="createToDo()">
@@ -60,6 +48,18 @@
           <a class="ToDo-delete" @click="deleteToDo(ToDo.id)"></a>
         </li>
       </ul>
+
+      <span class="ToDos-title">👨🏻‍💻 Ver os dados</span>
+      <div class="btns">
+        <a
+          href="https://api-jsonserver-todolist.herokuapp.com/ToDos"
+          class="apiBtn"
+        >
+          Remote API
+        </a>
+
+        <a href="http://localhost:3000/ToDos" class="apiBtn"> Local API </a>
+      </div>
     </div>
 
     <!-- Use the data defined on the bundle
